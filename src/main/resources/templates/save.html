@@ -16,17 +16,17 @@
             <div class="card border-dark"> 
                 <div class="card-body bg-dark text-white">
                     <br/>  
-                    <form action="#" th:action="@{/save}" th:object="${producto}" method="post">  
-                        <label for="marca"  style="font-family: cursive">Marca</label>
-                        <input type="text" class="form-control" id="marca" th:field="*{marca}" name="marca">
-                        <label for="nombre"  style="font-family: cursive">Producto</label>
-                        <input type="text" class="form-control" id="nombre" th:field="*{nombre}" name="nombre">
-                        <label for="precio"  style="font-family: cursive">Precio</label>
-                        <input type="text" class="form-control" id="precio" th:field="*{precio}" name="precio">
+                    <form action="#" th:action="@{/save}" th:object="${product}" method="post">  
+                        <label for="category_id"  style="font-family: cursive">Categoria</label>
+                        <input type="text" class="form-control" id="category_id" th:field="*{category_id}" name="category_id">
+                        <label for="name"  style="font-family: cursive">Producto</label>
+                        <input type="text" class="form-control" id="name" th:field="*{name}" name="name">
+                        <label for="price"  style="font-family: cursive">Precio</label>
+                        <input type="text" class="form-control" id="price" th:field="*{price}" name="price">
                         <label for="stock"  style="font-family: cursive">Stock</label>
                         <input type="text" class="form-control" id="stock" th:field="*{stock}" name="stock">
-                        <label for="vendido"  style="font-family: cursive">Vendidos</label>
-                        <input type="text" class="form-control" id="vendido" th:field="*{vendido}" name="vendido">
+                        <label for="status"  style="font-family: cursive">Status</label>
+                        <input type="text" class="form-control" id="status" th:field="*{status}" name="status">
                         <br/> 
                         <button type="submit" class="btn btn-outline-success" style="font-family: cursive">Save</button>
                     </form> 

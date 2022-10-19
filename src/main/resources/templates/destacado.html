@@ -17,24 +17,24 @@
                 <thead>
                     <tr>
                         <th scope="col">Código</th>
-                        <th scope="col">Marca</th>
+                        <th scope="col">Categoria</th>
                         <th scope="col">Producto</th>
                         <th scope="col">Precio</th>
                         <th scope="col">Stock</th>
-                        <th scope="col">Vendidos</th>
+                        <th scope="col">Status</th>
                         <th scope="col">Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr th:each="pro : ${producto}">
+                    <tr th:each="pro : ${product}">
                         <td th:text="${pro.id}">
-                        <td th:text="${pro.marca}">  
-                        <td th:text="${pro.nombre}">  
-                        <td th:text="${pro.precio}">  
+                        <td th:text="${pro.category_id}">  
+                        <td th:text="${pro.name}">  
+                        <td th:text="${pro.price}">  
                         <td th:text="${pro.stock}">  
-                        <td th:text="${pro.vendido}">
+                        <td th:text="${pro.status}">
                         <td>
-                            <a th:href="@{/showProducto/{id}(id = ${pro.id})}" type="button" class="btn btn-outline-warning" style="font-family: cursive">Editar</a>
+                            <a th:href="@{/showProduct/{id}(id = ${pro.id})}" type="button" class="btn btn-outline-warning" style="font-family: cursive">Editar</a>
                         </td>
                     </tr>
                 </tbody>
