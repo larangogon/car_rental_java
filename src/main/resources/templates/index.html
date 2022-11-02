@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
     <head>
-        <title>Productos</title>
+        <title>Automobiles</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -9,19 +9,19 @@
     </head>
     <body>
         <div class="card-header bg-dark text-white">
-            <h3 style="font-family: cursive">Stock de Productos</h3>
+            <h3 style="font-family: cursive">Stock de AutomobileS</h3>
         </div>
         <br/> 
         <div class="container mt-4"> 
-            <a th:href="@{/showProduct}" type="button" class="btn btn-success text-white" style="font-family: cursive">Nuevo Producto</a>
+            <a th:href="@{/showAutomobile}" type="button" class="btn btn-success text-white" style="font-family: cursive">Nuevo Automobile</a>
             <br/> 
             <br/> 
             <table class="table table-striped table-dark"> 
                 <thead>
                     <tr>
                         <th scope="col">Código</th>
-                        <th scope="col">Categoria</th>
-                        <th scope="col">Producto</th>
+                        <th scope="col">Marca</th>
+                        <th scope="col">Automobile</th>
                         <th scope="col">Precio</th>
                         <th scope="col">Stock</th>
                         <th scope="col">Status</th>
@@ -29,16 +29,16 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr th:each="product : ${list}">
-                        <td th:text="${product.id}">
-                        <td th:text="${product.category_id}">  
-                        <td th:text="${product.name}">  
-                        <td th:text="${product.price}">  
-                        <td th:text="${product.stock}">  
-                        <td th:text="${product.status}">
+                    <tr th:each="automobile : ${list}">
+                        <td th:text="${automobile.id}">
+                        <td th:text="${automobile.brand_id}">  
+                        <td th:text="${automobile.name}">  
+                        <td th:text="${automobile.line}">  
+                        <td th:text="${automobile.stock}">  
+                        <td th:text="${automobile.status}">
                         <td>
-                            <a th:href="@{/destacado/{id}(id = ${product.id})}" type="button" class="btn btn-outline-warning" style="font-family: cursive">Destacado</a>
-                            <a th:href="@{/delete/{id}(id = ${product.id})}" type="button" class="btn btn-outline-light" style="font-family: cursive">Eliminar</a>
+                            <a th:href="@{/destacado/{id}(id = ${automobile.id})}" type="button" class="btn btn-outline-warning" style="font-family: cursive">Destacado</a>
+                            <a th:href="@{/delete/{id}(id = ${automobile.id})}" type="button" class="btn btn-outline-light" style="font-family: cursive">Eliminar</a>
                         </td>
                     </tr>
                 </tbody>

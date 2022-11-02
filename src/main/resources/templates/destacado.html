@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
     <head>
-        <title>Producto Destacado</title>
+        <title>automobile Destacado</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -9,7 +9,7 @@
     </head>
     <body>
         <div class="card-header bg-dark text-white">
-            <h3 style="font-family: cursive">Producto Destacado</h3>
+            <h3 style="font-family: cursive">automobile Destacado</h3>
         </div>
         <br/> 
         <div class="container mt-4"> 
@@ -17,8 +17,8 @@
                 <thead>
                     <tr>
                         <th scope="col">Código</th>
-                        <th scope="col">Categoria</th>
-                        <th scope="col">Producto</th>
+                        <th scope="col">Marca</th>
+                        <th scope="col">automobile</th>
                         <th scope="col">Precio</th>
                         <th scope="col">Stock</th>
                         <th scope="col">Status</th>
@@ -26,15 +26,15 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr th:each="pro : ${product}">
+                    <tr th:each="pro : ${automobile}">
                         <td th:text="${pro.id}">
-                        <td th:text="${pro.category_id}">  
+                        <td th:text="${pro.brand_id}">  
                         <td th:text="${pro.name}">  
-                        <td th:text="${pro.price}">  
+                        <td th:text="${pro.line}">  
                         <td th:text="${pro.stock}">  
                         <td th:text="${pro.status}">
                         <td>
-                            <a th:href="@{/showProduct/{id}(id = ${pro.id})}" type="button" class="btn btn-outline-warning" style="font-family: cursive">Editar</a>
+                            <a th:href="@{/showAutomobile/{id}(id = ${pro.id})}" type="button" class="btn btn-outline-warning" style="font-family: cursive">Editar</a>
                         </td>
                     </tr>
                 </tbody>

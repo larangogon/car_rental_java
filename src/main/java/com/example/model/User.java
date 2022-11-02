@@ -20,6 +20,10 @@ public class User {
 	@Column
 	@NotBlank
 	private String name;
+
+	@Column
+	@NotBlank
+	private String surname;
 	
 	@Column
 	@NotBlank
@@ -30,7 +34,12 @@ public class User {
 	private String address;
 	
 	@Column
+	@NotBlank
 	private String phone;
+
+	@Column
+	@NotBlank
+	private String document;
 
 	public Long getId() {
 		return id;
@@ -46,6 +55,14 @@ public class User {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public String getSurname() {
+		return surname;
+	}
+
+	public void setSurname(String surname) {
+		this.surname = surname;
 	}
 
 	public String getEmail() {
@@ -70,5 +87,13 @@ public class User {
 
 	public void setPhone(String phone) {
 		this.phone = phone;
+	}
+
+		public String getDocument() {
+		return document;
+	}
+
+	public void setDocument(String document) {
+		this.document = document;
 	}
 }

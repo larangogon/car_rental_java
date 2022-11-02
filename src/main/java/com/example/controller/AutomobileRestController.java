@@ -1,8 +1,8 @@
 package com.example.controller;
 
-import com.example.model.Product;
+import com.example.model.Automobile;
 import java.util.*;
-import com.example.service.ProductService;
+import com.example.service.AutomobileService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,26 +18,26 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/api")
 @CrossOrigin(origins = "http://localhost:8080")
-public class ProductRestController {
+public class AutomobileRestController {
 
     @Autowired
-    private ProductService service;
+    private AutomobileService service;
 
     @GetMapping(value = "/all")
-    public List<Product> getAll() {
+    public List<Automobile> getAll() {
         return service.list();
 
     }
 
     @GetMapping(value = "/find/{id}")
-    public Product find(@PathVariable int id) {
+    public Automobile find(@PathVariable int id) {
         return service.get(id);
 
     }
 
     @PostMapping(value = "/save")
-    public ResponseEntity<Product> save(@RequestBody Product product) {
-        Product obj = service.save(product);
+    public ResponseEntity<Automobile> save(@RequestBody Automobile automobile) {
+        Automobile obj = service.save(automobile);
         return new ResponseEntity<>(obj, HttpStatus.OK);
 
     }

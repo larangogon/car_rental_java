@@ -1,7 +1,7 @@
 package com.example.controller;
 
-import com.example.model.Product;
-import com.example.service.ProductService;
+import com.example.model.Automobile;
+import com.example.service.AutomobileService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,10 +11,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-public class ProductController {
+public class AutomobileController {
 
     @Autowired
-    ProductService service;
+    AutomobileService service;
 
     @RequestMapping("/")
     public String index(Model model) {
@@ -22,30 +22,30 @@ public class ProductController {
         return "index";
     }
 
-    @RequestMapping("/showProduct")
+    @RequestMapping("/showAutomobile")
     public String show(Model model) {
-        Product product = new Product();
-        model.addAttribute("product", product);
+        Automobile automobile = new Automobilet();
+        model.addAttribute("automobile", automobile);
         return "save";
     }
 
     @RequestMapping(value = "/save", method = RequestMethod.POST)
-    public String save(@ModelAttribute("product") Product product) {
-        service.save(product);
+    public String save(@ModelAttribute("automobile") Automobile automobile) {
+        service.save(automobile);
         return "redirect:/";
     }
 
-    @RequestMapping(value = "/showProduct/{id}")
+    @RequestMapping(value = "/showAutomobile/{id}")
     public String edit(@PathVariable(value = "id") int id, Model model) {
-        Product product = service.get(id);
-        model.addAttribute("product", product);
+        Automobile automobile = service.get(id);
+        model.addAttribute("automobile", automobile);
         return "edit";
     }
 
     @RequestMapping(value = "/destacado/{id}")
     public String destacado(@PathVariable(value = "id") int id, Model model) {
-        Product product = service.get(id);
-        model.addAttribute("product", product);
+        Automobile automobile = service.get(id);
+        model.addAttribute("automobile", automobile);
         return "destacado";
     }
 

@@ -1,7 +1,7 @@
 package ar.edu.larioja.control.stock.Services;
 
-import ar.edu.larioja.control.stock.Models.Category;
-import ar.edu.larioja.control.stock.Repositories.CategoryRepository;
+import ar.edu.larioja.control.stock.Models.Brand;
+import ar.edu.larioja.control.stock.Repositories.BrandRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -9,24 +9,24 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class CategoryServiceImpl implements CategoryService{
+public class BrandServiceImpl implements BrandService{
 
     @Autowired
-    private CategoryRepository categoryRepository;
+    private BrandRepository BrandRepository;
     @Override
-    public Category createCategory(Category category) {
-        return categoryRepository.save ( category );
+    public Brand createBrand(Brand brand) {
+        return BrandRepository.save ( brand );
     }
 
     @Override
-    public Category updateCategory(Category emp) {
+    public Brand updateBrand(Brand emp) {
         return null;
     }
 
     @Override
-    public Category getCategory(Long Id) {
+    public Brand getBrand(Long Id) {
 
-        Optional<Category> optionalCat = categoryRepository.findById(Id);
+        Optional<Brand> optionalCat = BrandRepository.findById(Id);
         if (optionalCat.isPresent()) {
             return optionalCat.get();
         }
@@ -34,12 +34,12 @@ public class CategoryServiceImpl implements CategoryService{
     }
 
     @Override
-    public void deleteCategory(Long empId) {
+    public void deleteBrand(Long empId) {
 
     }
 
     @Override
-    public List <Category> getAllCategory() {
-        return categoryRepository.findAll ();
+    public List <Brand> getAllBrand() {
+        return BrandRepository.findAll ();
     }
 }

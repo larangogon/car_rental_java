@@ -9,35 +9,36 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "product")
-public class Product implements Serializable {
+@Table(name = "automobile")
+public class Automobile implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     @Column
-    private String category_id;
+    private String brand_id;
      @Column
     private String description;
     @Column
-    private double price;
+    private String line;
     @Column
     private int stock;
     @Column
-    private int status;
+    private String status; // enu () (Disponible o Alquilado) OR bool
     @Column
-    private String name;
+    private String license_plate;
 
-    public Product() {
+    public Automobile() {
     }
 
-    public Product(int id, String category_id, double price, int stock, int status, String name, String description) {
+    public Automobile(int id, String brand_id, double line, int stock, int status, String license_plate, String description) {
         this.id = id;
-        this.category_id = category_id;
-        this.price = price;
+        this.brand_id = brand_id;
+        this.line = line;
         this.stock = stock;
         this.status = status;
-        this.name = name;
+        this.license_plate = license_plate;
+        this.description = description;
     }
 
     public int getId() {
@@ -48,20 +49,20 @@ public class Product implements Serializable {
         this.id = id;
     }
 
-    public String getCategory() {
-        return category_id;
+    public String getBrand() {
+        return brand_id;
     }
 
-    public void setCategory(String category_id) {
-        this.category_id = category_id;
+    public void setBrand(String brand_id) {
+        this.brand_id = brand_id;
     }
 
-    public double getPrice() {
-        return price;
+    public double getLine() {
+        return line;
     }
 
-    public void setPrice(double price) {
-        this.price = price;
+    public void setLine(double line) {
+        this.line = line;
     }
 
     public int getStock() {
@@ -80,12 +81,12 @@ public class Product implements Serializable {
         this.status = status;
     }
 
-    public String getName() {
-        return name;
+    public String getLicensePlate() {
+        return license_plate;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void seticense_plate(String license_plate) {
+        this.license_plate = license_plate;
     }
 
        public String getDescription() {

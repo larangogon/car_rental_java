@@ -9,20 +9,20 @@
     </head>
     <body>
         <div class="card-header bg-dark text-white">
-            <h3 style="font-family: cursive">Nuevo Producto</h3>
+            <h3 style="font-family: cursive">Nuevo automobile</h3>
         </div>
         <br/> 
         <div class="container mt-4 col-lg-6">
             <div class="card border-dark"> 
                 <div class="card-body bg-dark text-white">
                     <br/>  
-                    <form action="#" th:action="@{/save}" th:object="${product}" method="post">  
-                        <label for="category_id"  style="font-family: cursive">Categoria</label>
-                        <input type="text" class="form-control" id="category_id" th:field="*{category_id}" name="category_id">
-                        <label for="name"  style="font-family: cursive">Producto</label>
-                        <input type="text" class="form-control" id="name" th:field="*{name}" name="name">
-                        <label for="price"  style="font-family: cursive">Precio</label>
-                        <input type="text" class="form-control" id="price" th:field="*{price}" name="price">
+                    <form action="#" th:action="@{/save}" th:object="${automobile}" method="post">  
+                        <label for="brand_id"  style="font-family: cursive">Marca</label>
+                        <input type="text" class="form-control" id="brand_id" th:field="*{brand_id}" name="brand_id">
+                        <label for="license_plate"  style="font-family: cursive">Automobile</label>
+                        <input type="text" class="form-control" id="license_plate" th:field="*{license_plate}" name="license_plate">
+                        <label for="line"  style="font-family: cursive">Precio</label>
+                        <input type="text" class="form-control" id="line" th:field="*{line}" name="line">
                         <label for="stock"  style="font-family: cursive">Stock</label>
                         <input type="text" class="form-control" id="stock" th:field="*{stock}" name="stock">
                         <label for="status"  style="font-family: cursive">Status</label>

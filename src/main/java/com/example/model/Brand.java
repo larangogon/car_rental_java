@@ -5,8 +5,8 @@ import org.omg.PortableInterceptor.INACTIVE;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "categories")
-public class Category {
+@Table(name = "brands")
+public class Brand {
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name = "Id")
@@ -17,7 +17,6 @@ public class Category {
 
     @Column(name = "Name")
     private String Name;
-
 
     public Long getId() {
         return Id;

@@ -1,33 +1,33 @@
 package com.example.service;
 
-import com.example.model.Product;
+import com.example.model.Automobile;
 import java.util.*;
-import com.example.repository.ProductRepository;
+import com.example.repository.AutomobileRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class ProductService {
+public class AutomobileService {
 
     @Autowired
-    ProductRepository repository;
+    AutomobileRepository repository;
 
-    //List Products
-    public List<Product> list() {
+    //List automobile
+    public List<Automobile> list() {
         return repository.findAll();
     }
 
-    //Save Product
-    public Product save(Product product) {
-        return repository.save(product);
+    //Save automobile
+    public Automobile save(automobile automobile) {
+        return repository.save(automobile);
     }
 
-    //Get Product By Id
-    public Product get(int id) {
+    //Get automobile By Id
+    public Automobile get(int id) {
         return repository.findById(id).get();
     }
 
-    //Delete Product
+    //Delete automobile
     public void delete(int id) {
         repository.deleteById(id);
     }
