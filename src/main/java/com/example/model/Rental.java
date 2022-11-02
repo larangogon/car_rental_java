@@ -5,21 +5,32 @@ import org.omg.PortableInterceptor.INACTIVE;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "orders")
-public class Order {
+@Table(name = "rentalS")
+public class Rental {
+
+    //Register a rental
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name = "Id")
     private Long Id;
 
-    @Column(name = "Status")
-    private String Status;
+    @Column(name = "Status") //iniciado o finalizado (entregado o en uso)
+    private String status;
 
-    @Column(name = "Total")
-    private String Total;
+    @Column(name = "date_rental_initial")
+    private String date_rental_initial;
 
-     @Column(name = "shopping_cart_id")
-    private String Shopping_cart_id;
+     @Column(name = "date_rental_finish")
+    private String date_rental_finish;
+
+    @Column(name = "Total_days_rental")
+    private String total_days_rental;
+
+     @Column(name = "user_id")
+    private int user_id;
+
+    @Column(name = "automobile_id")
+    private int automobile_id;
 
 
     public Long getId() {
@@ -30,27 +41,51 @@ public class Order {
         Id = id;
     }
 
+      public Long getDateRentalInitial() {
+        return date_rental_initial;
+    }
+
+    public void setDateRentalInitial(Long date_rental_initial) {
+        Id = date_rental_initial;
+    }
+
+    public Long getDateRentalFinish() {
+        return date_rental_finish;
+    }
+
+    public void setDateRentalFinish(Long date_rental_finish) {
+        Id = date_rental_finish;
+    }
+
     public String getStatus() {
-        return Status;
+        return status;
     }
 
     public void setStatus(String status) {
-        Status = status;
+        status = status;
     }
 
-    public String getTotal() {
-        return Total;
+    public String getTotalDaysRental() {
+        return total_days_rental;
     }
 
-    public void setTotal(String total) {
-        Total = total;
+    public void setTotalDaysRental(String total_days_rental) {
+        total_days_rental = total_days_rental;
     }
 
-     public String getShoppingCartId() {
-        return shopping_cart_id;
+     public String getUserId() {
+        return user_id;
     }
 
-    public void setShoppingCartId(String shopping_cart_id) {
-        Shopping_cart_id = shopping_cart_id;
+    public void setUserId(String user_id) {
+        User_id = user_id;
+    }
+
+       public String getAutomobileId() {
+        return automobile_id;
+    }
+
+    public void setAutomobileId(String user_id) {
+        automobile_id = automobile_id;
     }
 }

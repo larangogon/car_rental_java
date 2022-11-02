@@ -17,7 +17,7 @@ import java.util.List;
 public class BrandController {
 
     @Autowired
-    private CBrandService brandService;
+    private BrandService BrandService;
 
     @GetMapping(produces="application/json",path = "/")
     public ResponseEntity<String> HelloWorld(){
@@ -44,7 +44,4 @@ public class BrandController {
     public ResponseEntity<Brand> getEmployee(@PathVariable(value = "crandId") Long brandId) {
         return new ResponseEntity<>(BrandService.getBrand (brandId), HttpStatus.OK);
     }
-
-
-
 }
