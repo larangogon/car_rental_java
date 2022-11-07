@@ -44,4 +44,35 @@ public class RegisterController {
     public ResponseEntity<Register> getEmployee(@PathVariable(value = "crandId") Long registerId) {
         return new ResponseEntity<>(RegisterService.getRegister (registerId), HttpStatus.OK);
     }
+
+	private String name;
+
+	public void processRegister(Rental rental, long timeStamp) {
+
+		System.out.println("admini " + this.name + 
+				" START PROCESSING THE CUSTOMER'S PURCHASE " + rental.getUserId() + 
+				" IN THE TIME: " + (System.currentTimeMillis() - timeStamp) / 1000	+
+				"seg");
+
+		for (int i = 0; i < rental.getAutomobileId().length; i++) { 
+				this.waitPerseconds(rental.getAutomobileId()[i]); 
+				System.out.println("Processed the product " + (i + 1) +  
+				" ->Time: " + (System.currentTimeMillis() - timeStamp) / 1000 + 
+				"seg");
+		}
+
+		System.out.println("admini " + this.name + " FINISHED PROCESSING " + 
+				rental.getUserId() + " IN THE TIME: " + 
+				(System.currentTimeMillis() - timeStamp) / 1000 + "seg");
+
+	}
+
+
+	private void waitPerseconds(int segundos) {
+		try {
+			Thread.sleep(segundos * 1000);
+		} catch (InterruptedException ex) {
+			Thread.currentThread().interrupt();
+		}
+	}
 }
